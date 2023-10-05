@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CircleImageView correctly 1`] = `
+<View
+  style={
+    {
+      "borderRadius": 50,
+      "height": 100,
+      "overflow": "hidden",
+      "width": 100,
+    }
+  }
+>
+  <Image
+    source={
+      {
+        "uri": "https://example.com/image.jpg",
+      }
+    }
+    style={
+      {
+        "flex": 1,
+        "height": null,
+        "resizeMode": "cover",
+        "width": null,
+      }
+    }
+  />
+</View>
+`;

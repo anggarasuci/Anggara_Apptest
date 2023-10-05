@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders VerticalTextView correctly 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "#9E9E9E",
+        "fontSize": 12,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Label
+  </Text>
+  <Text
+    style={
+      {
+        "color": "#404040",
+        "fontSize": 18,
+        "fontWeight": "normal",
+      }
+    }
+  >
+    Value
+  </Text>
+</View>
+`;

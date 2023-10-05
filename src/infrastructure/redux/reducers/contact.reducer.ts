@@ -7,7 +7,7 @@ export interface ContactState {
   isRefreshState: boolean;
 }
 
-const initialState: ContactState = {
+export const initialState: ContactState = {
   items: [],
   selectedItem: null,
   isRefreshState: false,

@@ -30,7 +30,7 @@ class ContactUseCase {
     try {
       const data = await this.repository.submit(request, id);
       return {data};
-    } catch (error) {
+    } catch (error: any) {
       return {error: error.message};
     }
   }
@@ -39,7 +39,7 @@ class ContactUseCase {
     try {
       const data = await this.repository.delete(id);
       return {data};
-    } catch (error) {
+    } catch (error: any) {
       return {error: error.message};
     }
   }

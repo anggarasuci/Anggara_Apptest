@@ -24,7 +24,7 @@ const ContactViewModel = () => {
   }, []);
 
   useFocusEffect(() => {
-    if (state.isRefreshState) {
+    if (state?.isRefreshState) {
       getItems();
       dispatch(refreshContacts(false));
     }
@@ -57,7 +57,7 @@ const ContactViewModel = () => {
   }, [selectedId, dispatch]);
 
   return {
-    items: state.items,
+    items: state?.items ?? [],
     isDeleteDialogVisible,
     onNavigateToCreatePage,
     onDeleteClicked,

@@ -44,11 +44,13 @@ const ContactScreen = () => {
   return (
     <>
       <View>
-        <FlatList
-          data={items}
-          keyExtractor={(item: ContactModel) => item.id.toString()}
-          renderItem={({item}) => getContent(item)}
-        />
+        {items?.length > 0 && (
+          <FlatList
+            data={items}
+            keyExtractor={(item: ContactModel) => item.id.toString()}
+            renderItem={({item}) => getContent(item)}
+          />
+        )}
       </View>
       <View style={styles.fabContainer}>
         <TouchableOpacity

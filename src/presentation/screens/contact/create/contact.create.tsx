@@ -4,7 +4,7 @@ import {ContactCreateViewModel} from './contact.create.viewmodel';
 import {useRoute} from '@react-navigation/native';
 import {contactCreateStyle as styles} from './contact.create.style';
 import InputView from '../../../components/input/input';
-import {Regex, Validation} from '../../../../infrastructure/utils/validation';
+import {Regex} from '../../../../infrastructure/utils/validation';
 
 const ContactCreateScreen = () => {
   const route = useRoute();
