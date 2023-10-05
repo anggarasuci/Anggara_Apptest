@@ -3,7 +3,6 @@ import {ContactRepository} from '../../domain/repositories/contact.repository';
 import ContactApi from '../remotes/api/contact.api';
 import {convertToContactModel} from '../remotes/dto/contact.dto';
 import {ContactPostRequest} from '../remotes/request/contact.post.request';
-import {ContactPutRequest} from '../remotes/request/contact.put.request';
 
 class ContactRepositoryImpl implements ContactRepository {
   async getItems(): Promise<ContactModel[]> {
@@ -12,14 +11,16 @@ class ContactRepositoryImpl implements ContactRepository {
     );
     return result;
   }
-  create(request: ContactPostRequest): Promise<ContactModel> {
-    throw new Error('Method not implemented.');
+
+  async submit(request: ContactPostRequest, id?: string) {
+    if (id) {
+      return await ContactApi.update(id, request);
+    } else {
+      return await ContactApi.create(request);
+    }
   }
-  update(request: ContactPutRequest): Promise<ContactModel> {
-    throw new Error('Method not implemented.');
-  }
-  delete(id: number): Promise<number> {
-    throw new Error('Method not implemented.');
+  async delete(id: string): Promise<void> {
+    return await ContactApi.delete(id);
   }
 }
 

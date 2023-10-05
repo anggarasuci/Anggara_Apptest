@@ -5,6 +5,9 @@ export const ContactActionType = {
   SET: 'SET_CONTACT',
   UPDATE: 'UPDATE_CONTACT',
   DELETE: 'DELETE_CONTACT',
+  GET: 'GET_CONTACT',
+  GETS: 'GET_CONTACTS',
+  REFRESH: 'REFRESH_CONTACT',
 };
 
 const ContactAction = () => {
@@ -23,9 +26,23 @@ const ContactAction = () => {
     payload: data,
   });
 
-  const deleteContact = (id: number) => ({
+  const deleteContact = (id: string) => ({
     type: ContactActionType.DELETE,
     payload: id,
+  });
+
+  const getContact = (id: string) => ({
+    type: ContactActionType.GET,
+    payload: id,
+  });
+
+  const getContacts = () => ({
+    type: ContactActionType.GETS,
+  });
+
+  const refreshContacts = (isRefresh: boolean) => ({
+    type: ContactActionType.REFRESH,
+    payload: isRefresh,
   });
 
   return {
@@ -33,6 +50,9 @@ const ContactAction = () => {
     setContact,
     updateContact,
     deleteContact,
+    getContact,
+    getContacts,
+    refreshContacts,
   };
 };
 

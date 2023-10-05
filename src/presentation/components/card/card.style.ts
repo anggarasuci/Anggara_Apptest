@@ -13,6 +13,7 @@ export const cardStyles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     padding: 16,
-    margin: 16,
+    marginHorizontal: 16,
+    marginVertical: 8,
   },
 });

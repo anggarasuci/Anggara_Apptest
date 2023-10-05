@@ -24,22 +24,13 @@ async function callApi<T>(
     config.data = data;
   }
 
-  return axios(config)
-    .then((response: AxiosResponse<ApiResponse<T>>) => {
-      if (response.status !== 200) {
-        throw new Error('Network response was not ok');
-      }
+  return axios(config).then((response: AxiosResponse<ApiResponse<T>>) => {
+    if (response.data.error) {
+      throw new Error(response.data.error);
+    }
 
-      if (response.data.error) {
-        throw new Error(response.data.error);
-      }
-
-      return response.data.data ?? ({} as T);
-    })
-    .catch(error => {
-      console.error('API error:', error.message);
-      throw error;
-    });
+    return response.data.data ?? ({} as T);
+  });
 }
 
 export default callApi;

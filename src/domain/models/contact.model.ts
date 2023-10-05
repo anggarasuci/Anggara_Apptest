@@ -3,6 +3,6 @@ export interface ContactModel {
   firstName: string;
   lastName: string;
   fullName: string;
-  age: string;
+  age: number;
   photo: string;
 }

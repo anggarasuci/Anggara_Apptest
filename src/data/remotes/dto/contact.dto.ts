@@ -4,7 +4,7 @@ export interface ContactDataDto {
   id: string;
   firstName: string;
   lastName: string;
-  age: string;
+  age: number;
   photo: string;
 }
 
